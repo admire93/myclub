@@ -1,0 +1,21 @@
+{
+  "name": "webp-nl",
+  "version": "0.0.0",
+  "homepage": "https://github.com/admire93/webp-nl",
+  "authors": [
+    "Kang Hyojun <hyojun@admire.kr>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.2.0"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
