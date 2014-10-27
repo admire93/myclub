@@ -1,0 +1,38 @@
+* { margin: 0; padding: 0; }
+
+
+.row { width: 100%; }
+
+header {
+  background: rgb(49, 49, 49); color: rgb(255, 255, 255);
+  margin: 0;
+  height: 100px; width: 100%;
+  min-width: 1024px;
+  float: left; }
+
+header nav {
+  width: 1024px; height: 100px;
+  margin: 0 auto; }
+
+header nav ul#menu {
+  list-style: none;
+  width: 1024px; height: 100px;
+  margin: 0;}
+
+header nav ul#menu li {
+  float: left;
+  margin-right: 90px;
+  width: 100px; height: 100px; }
+
+#menu li a {
+  font-size: 50px;
+  display: block;
+  width: 100px; height: 100px;
+  padding: 20px 25px;
+  color: rgb(255, 255, 255); }
+
+#menu li a:hover { background: rgb(100, 100, 100); }
+
+.container {
+  clear: left; width: 1024px;
+  margin-top: 400px; }
