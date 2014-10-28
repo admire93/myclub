@@ -1,0 +1,15 @@
+#content { width: 500px; margin: 150px auto; }
+
+.form-title { margin-bottom: 20px; }
+
+.form-title h1, .form-title p { width: 340px; margin: 0 auto; }
+
+.form-title h1 { font-size: 90px; display: block; }
+
+.form-title p { text-align: center; }
+
+form#login { width: 500px; }
+
+form#login input, form#login button { height: 60px; width: 500px; }
+
+#login .alert { color: #a94442;}
