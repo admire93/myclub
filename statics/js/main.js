@@ -1,33 +1,33 @@
-var getCookie = function(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0; i<ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1);
-        if (c.indexOf(name) != -1) {
-          return JSON.parse(c.substring(name.length,c.length));
-        }
-    }
-    return {};
+var setSession = function(k, v) {
+  sessionStorage[k] = JSON.stringify(v);
 }
 
-var setCookie = function(name, json) {
-  document.cookie = name + '=' + JSON.stringify(json);
+var getSession = function(k) {
+  return JSON.parse(sessionStorage[k]);
 }
 
 var login = function(d) {
-  setCookie('clublogin', d);
+  setSession('login', d);
   location.href = "./index.html";
 }
 
 var logout = function() {
-  setCookie('clublogin', {});
+  setSession('login', {});
   location.href = "./login.html";
 }
 
 var isLogin = function() {
-  cookie = getCookie('clublogin');
-  return cookie['clubname'] != undefined;
+  sess = getSession('login');
+  return sess['clubname'] != undefined;
+}
+
+var findMe = function() {
+  var r = {};
+  if(isLogin()) {
+    r = getSession('login');
+  }
+
+  return r;
 }
 
 var Find = function(r) {
