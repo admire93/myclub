@@ -51,12 +51,17 @@ $('#login').restfulize(function(d) {
       return;
     }
     u.create(d['clubname'], d['password'])
-    //TODO: redirect when successfully create a user;
+    login(d);
   } else if(q.empty()) {
     $('.submit-box').before($('<div class="form-group"><input type="password" name="password-confirm" placeholder="비밀번호 확인" class="form-control" /></div>'));
     window['isJoin'] = true;
     return;
   } else {
-    //TODO: actually login;
+    var q = u.and({'clubname': d['clubname'], 'password': d['password']});
+    if(q != undefined && q.empty()) {
+      showAlert('.alert', "동아리 이름 또는 비밀번호가 잘못되었습니다.");
+    } else {
+      login(q.first());
+    }
   }
 });

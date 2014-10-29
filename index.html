@@ -50,6 +50,12 @@
             <span class="glyphicon glyphicon-book"></span>
             </a>
           </li>
+
+          <li>
+            <a href="#logout" id="logout">
+            <span class="glyphicon glyphicon-log-out"></span>
+            </a>
+          </li>
         </ul>
       </nav>
 
@@ -68,6 +74,11 @@
     </script>
     <script type="text/javascript"
             src="./statics/js/main.js">
+    </script>
+    <script type="text/javascript">
+      $("#logout").click(function(e) {
+          logout();
+      });
     </script>
   </body>
 </html>
