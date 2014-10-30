@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>
+    </title>
+    <script type="text/javascript"
+            src="./statics/bower/jquery/dist/jquery.min.js">
+    </script>
+    <link rel="stylesheet"
+          type="text/css"
+          href="./statics/bower/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet"
+          type="text/css"
+          href="./statics/css/main.css" />
+    <link rel="stylesheet"
+          type="text/css"
+          href="./statics/css/user.css" />
+  </head>
+
+  <body>
+    <header>
+
+      <nav>
+        <ul id="menu">
+
+          <li>
+            <a href="./index.html">
+              <span class="glyphicon glyphicon-home"></span>
+            </a>
+          </li>
+
+          <li>
+            <a href="./users.html">
+              <span class="glyphicon glyphicon-user"></span>
+            </a>
+          </li>
+
+          <li>
+            <a href="">
+            <span class="glyphicon glyphicon-th-list"></span>
+            </a>
+          </li>
+
+          <li>
+            <a href="">
+            <span class="glyphicon glyphicon-print"></span>
+            </a>
+          </li>
+
+          <li>
+            <a href="">
+            <span class="glyphicon glyphicon-book"></span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#logout" id="logout">
+            <span class="glyphicon glyphicon-log-out"></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+    </header>
+
+    <div class="container">
+
+      <div class="row">
+        <div id="content">
+          <h1 id="title" role="tmpl">
+            {clubname} 에 있는 회원들
+          </h1>
+
+          <table id="members">
+            <!-- student number, name, phone number, facebook?-->
+            <thead>
+              <tr>
+                <td colspan="5">
+                  <a href="#add-member" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-plus">
+                    </span>
+                    회원 추가하기
+                  </a>
+                </td>
+              </tr>
+
+              <tr class="table-heads">
+                <th>pics</th>
+                <th>학번</th>
+                <th>이름</th>
+                <th>핸드폰 번호</th>
+                <th>SNS 주소</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr class="form">
+                <td>
+                    <div class="form-group">
+                      <button type="submit" name="submit" class="btn btn-parimary">
+                        <span class="glyphicon glyphicon-floppy-saved"></span>
+                      </button>
+                    </div>
+                </td>
+
+                <form role="form">
+                  <td>
+                    <div class="form-group has-error">
+                      <input type="text" name="studentNumber" class="form-control" />
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="form-group">
+                      <input type="text" name="name" class="form-control" />
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="form-group">
+                      <input type="text" name="phoneNumber" class="form-control" />
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="form-group">
+                      <input type="text" name="sns" class="form-control" />
+                    </div>
+                  </td>
+                </form>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <script type="text/javascript"
+            src="./statics/bower/bootstrap/dist/js/bootstrap.min.js">
+    </script>
+    <script type="text/javascript"
+            src="./statics/js/main.js">
+    </script>
+    <script type="text/javascript">
+      $("#logout").click(function(e) {
+          logout();
+      });
+      if(!isLogin()) {
+        location.href = "./login.html";
+      }
+    </script>
+    <script type="text/javascript"
+            src="./statics/js/tmpl.js">
+    </script>
+    <script type="text/javascript"
+            src="./statics/js/page.user.js">
+    </script>
+  </body>
+</html>

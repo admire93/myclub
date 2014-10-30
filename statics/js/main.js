@@ -1,9 +1,15 @@
+var CLUB_PREFIX = 'myclubnl!';
+
 var setSession = function(k, v) {
-  sessionStorage[k] = JSON.stringify(v);
+  sessionStorage[CLUB_PREFIX + k] = JSON.stringify(v);
 }
 
 var getSession = function(k) {
-  return JSON.parse(sessionStorage[k]);
+  g = sessionStorage[CLUB_PREFIX + k];
+  if(g == undefined) {
+    g = '{}'
+  }
+  return JSON.parse(g);
 }
 
 var login = function(d) {
@@ -52,7 +58,7 @@ var Model = function(name) {
 }
 
 Model.prototype.setStoreName = function(store_name) {
-  this.store_name = store_name;
+  this.store_name = CLUB_PREFIX + store_name;
 }
 
 Model.prototype.push = function(e) {
