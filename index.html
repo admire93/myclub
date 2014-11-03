@@ -79,12 +79,7 @@
             src="./statics/js/main.js">
     </script>
     <script type="text/javascript">
-      $("#logout").click(function(e) {
-          logout();
-      });
-      if(!isLogin()) {
-        location.href = "./login.html";
-      }
+      requireLogin();
     </script>
     <script type="text/javascript"
             src="./statics/js/tmpl.js">

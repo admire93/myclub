@@ -1,26 +1,3 @@
-$.fn.extend({
-  restfulize: function(callback) {
-    this.submit(function(e) {
-      var $this = $(this),
-          v = $this.serializeArray();
-      json = {}
-      for(i in v) {
-        var item = v[i]
-        json[item.name] = item.value;
-      }
-      callback(json);
-      return false;
-    });
-  }
-});
-
-function showAlert(classname, text) {
-  var $elem = $(classname);
-  $elem.hide();
-  $elem.find('span.text').text(text);
-  $elem.show("bounce", {}, 500, function() {});
-}
-
 $('#login').restfulize(function(d) {
   var $me = $('#login');
   var u = new User();

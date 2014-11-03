@@ -36,3 +36,5 @@ header nav ul#menu li {
 .container {
   clear: left; width: 1024px;
   margin-top: 400px; }
+
+.alert .text { color: #a94442;}

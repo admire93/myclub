@@ -7,6 +7,9 @@
     <script type="text/javascript"
             src="./statics/bower/jquery/dist/jquery.min.js">
     </script>
+    <script type="text/javascript"
+            src="./statics/bower/jquery-ui/jquery-ui.min.js">
+    </script>
     <link rel="stylesheet"
           type="text/css"
           href="./statics/bower/bootstrap/dist/css/bootstrap.min.css" />
@@ -95,18 +98,17 @@
             </thead>
 
             <tbody>
-              <tr class="form">
-                <td>
+                <tr class="form">
+                  <td>
                     <div class="form-group">
                       <button type="submit" name="submit" class="btn btn-parimary">
                         <span class="glyphicon glyphicon-floppy-saved"></span>
                       </button>
                     </div>
-                </td>
+                  </td>
 
-                <form role="form">
                   <td>
-                    <div class="form-group has-error">
+                    <div class="form-group">
                       <input type="text" name="studentNumber" class="form-control" />
                     </div>
                   </td>
@@ -128,14 +130,13 @@
                       <input type="text" name="sns" class="form-control" />
                     </div>
                   </td>
-                </form>
-              </tr>
 
+              </tr>
             </tbody>
           </table>
+
         </div>
       </div>
-
     </div>
 
     <script type="text/javascript"
@@ -145,15 +146,13 @@
             src="./statics/js/main.js">
     </script>
     <script type="text/javascript">
-      $("#logout").click(function(e) {
-          logout();
-      });
-      if(!isLogin()) {
-        location.href = "./login.html";
-      }
+      requireLogin();
     </script>
     <script type="text/javascript"
             src="./statics/js/tmpl.js">
+    </script>
+    <script type="text/javascript"
+            src="./statics/js/member.js">
     </script>
     <script type="text/javascript"
             src="./statics/js/page.user.js">

@@ -124,3 +124,36 @@ Model.prototype.or = function(arg) {
 
   return new Find(r);
 }
+
+$("#logout").click(function(e) {
+    logout();
+});
+
+function requireLogin() {
+  if(!isLogin()) {
+    location.href = "./login.html";
+  }
+}
+
+function showAlert(classname, text) {
+  var $elem = $(classname);
+  $elem.hide();
+  $elem.find('span.text').text(text);
+  $elem.show("bounce", {}, 500, function() {});
+}
+
+$.fn.extend({
+  restfulize: function(callback) {
+    this.submit(function(e) {
+      var $this = $(this),
+          v = $this.serializeArray();
+      json = {}
+      for(i in v) {
+        var item = v[i]
+        json[item.name] = item.value;
+      }
+      callback(json);
+      return false;
+    });
+  }
+});
