@@ -65,6 +65,11 @@ Model.prototype.push = function(e) {
   this.store.push(e);
 }
 
+Model.prototype.reset = function(e) {
+  this.store = [];
+  this.commit();
+}
+
 Model.prototype.commit = function() {
   localStorage[this.store_name] = JSON.stringify(this.store);
 }

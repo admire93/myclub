@@ -6,7 +6,7 @@ $.fn.extend({
     $this.removeClass(target);
     $this.addClass(change);
   },
-  'validate': function(opt, submit) {
+  'validate': function(opt, submit, callback) {
     var $this = $(this);
     var $inputs = $this.find('input');
 
@@ -38,8 +38,9 @@ $.fn.extend({
       }
 
       if(r.length != 0 && r.reduce(function(a, b) { return a && b})) {
-        var mem = new Member();
+        callback.success($inputs);
       } else {
+        callback.error($inputs);
         return false;
       }
     };
@@ -52,11 +53,30 @@ $.fn.extend({
   }
 });
 
-$('.form').validate({
+var rules = {
   'phoneNumber': /01[0-9][0-9]{3,4}[0-9]{4}/,
   'studentNumber': /[0-9]{8}/,
   'sns': /https?:\/\/facebook\.com\/[0-9a-zA-Z]+\/?/,
-}, $('.form button[name=submit]'));
+  'name': /[^0-9]+/,
+};
+var $submit = $('.form button[name=submit]');
 
+$('.form').validate(
+  rules,
+  $submit,
+  {
+    'success': function($elems) {
+      var mem = new Member();
+      var r = {};
 
-//http://graph.facebook.com/kanghyojun/picture
+      for(i=0; i<$elems.length; i++) {
+        var $i = $($elems[i]);
+        r[$i.attr('name')] = $i.val();
+      }
+
+      mem.createByJSON(r);
+    },
+    'error': function() {
+    }
+  }
+);
