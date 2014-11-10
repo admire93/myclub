@@ -1,5 +1,18 @@
 (function() {
   var member = new Member();
+
+  var addMemberAtTable = function(data) {
+    var tem = $('.template')[0].outerHTML;
+    var n = new Find(data['sns'].split('/'));
+    var url = 'http://graph.facebook.com/' + n.last() + '/picture';
+    data['pics'] = '<img src=' + url + ' />';
+    var $elem = $(tem.tmpl(data));
+    $elem.removeClass('template');
+    $elem.removeAttr('style');
+
+    $('tbody').append($elem);
+  }
+
   $('h1#title').tmpl({'clubname': findMe()['clubname']});
 
   $.fn.extend({
@@ -43,8 +56,9 @@
           callback.success($inputs);
         } else {
           callback.error($inputs);
-          return false;
         }
+
+        return false;
       };
 
       if(submit != undefined) {
@@ -78,6 +92,7 @@
         }
 
         mem.createByJSON(r);
+        addMemberAtTable(r);
         $form.toggle();
       },
       'error': function() {
@@ -90,18 +105,9 @@
     e.preventDefault();
   });
 
-  var tem = $('.template')[0].outerHTML;
   var all_members = member.all();
 
   for(i=0; i<all_members.length(); i++) {
-    var data = all_members.get(i);
-    var n = new Find(data['sns'].split('/'));
-    var url = 'http://graph.facebook.com/' + n.last() + '/picture';
-    data['pics'] = '<img src=' + url + ' />';
-    var $elem = $(tem.tmpl(data));
-    $elem.removeClass('template');
-    $elem.removeAttr('style');
-
-    $('tbody').append($elem);
+    addMemberAtTable(all_members.get(i));
   }
 })();

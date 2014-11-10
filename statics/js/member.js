@@ -24,8 +24,3 @@ Member.prototype.createByJSON = function(json) {
   return this.create(
       json['studentNumber'], json['name'], json['phoneNumber'], json['sns']);
 };
-
-
-Member.prototype.all = function() {
-  return new Find(this.store);
-}
