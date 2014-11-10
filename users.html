@@ -80,7 +80,9 @@
             <thead>
               <tr>
                 <td colspan="5">
-                  <a href="#add-member" class="btn btn-primary">
+                  <a href="#add-member"
+                     class="btn btn-primary"
+                     id="add-member">
                     <span class="glyphicon glyphicon-plus">
                     </span>
                     회원 추가하기
@@ -98,40 +100,52 @@
             </thead>
 
             <tbody>
-                <tr class="form">
-                  <td>
-                    <div class="form-group">
-                      <button type="submit" name="submit" class="btn btn-parimary">
-                        <span class="glyphicon glyphicon-floppy-saved"></span>
-                      </button>
-                    </div>
-                  </td>
+              <tr class="template" style="display: none;">
+                <td>{pics}</td>
 
-                  <td>
-                    <div class="form-group">
-                      <input type="text" name="studentNumber" class="form-control" />
-                    </div>
-                  </td>
+                <td>{studentNumber}</td>
 
-                  <td>
-                    <div class="form-group">
-                      <input type="text" name="name" class="form-control" />
-                    </div>
-                  </td>
+                <td>{name}</td>
 
-                  <td>
-                    <div class="form-group">
-                      <input type="text" name="phoneNumber" class="form-control" />
-                    </div>
-                  </td>
+                <td>{phoneNumber}</td>
 
-                  <td>
-                    <div class="form-group">
-                      <input type="text" name="sns" class="form-control" />
-                    </div>
-                  </td>
-
+                <td>{sns}</td>
               </tr>
+
+              <tr class="form" style="display: none;">
+                <td>
+                  <div class="form-group">
+                    <button type="submit" name="submit" class="btn btn-parimary">
+                      <span class="glyphicon glyphicon-floppy-saved"></span>
+                    </button>
+                  </div>
+                </td>
+
+                <td>
+                  <div class="form-group">
+                    <input type="text" name="studentNumber" class="form-control" />
+                  </div>
+                </td>
+
+                <td>
+                  <div class="form-group">
+                    <input type="text" name="name" class="form-control" />
+                  </div>
+                </td>
+
+                <td>
+                  <div class="form-group">
+                    <input type="text" name="phoneNumber" class="form-control" />
+                  </div>
+                </td>
+
+                <td>
+                  <div class="form-group">
+                    <input type="text" name="sns" class="form-control" />
+                  </div>
+                </td>
+
+            </tr>
             </tbody>
           </table>
 

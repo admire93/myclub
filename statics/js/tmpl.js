@@ -10,3 +10,13 @@ $.fn.extend({
     return $this;
   }
 });
+
+String.prototype.tmpl = function(d) {
+  var that = new String(this);
+
+  for(k in d) {
+    that = that.replace("{" + k + "}", d[k]);
+  }
+
+  return that;
+}

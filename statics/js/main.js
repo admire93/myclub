@@ -36,6 +36,7 @@ var findMe = function() {
   return r;
 }
 
+
 var Find = function(r) {
   this.r = r;
 }
@@ -50,6 +51,18 @@ Find.prototype.all = function() {
 
 Find.prototype.empty = function() {
   return this.r.length == 0;
+}
+
+Find.prototype.get = function(i) {
+  return this.r[i];
+}
+
+Find.prototype.length = function(i) {
+  return this.r.length;
+}
+
+Find.prototype.last = function(i) {
+  return this.r[this.r.length - 1];
 }
 
 var Model = function(name) {
@@ -128,6 +141,10 @@ Model.prototype.or = function(arg) {
   }
 
   return new Find(r);
+}
+
+Model.prototype.all = function() {
+  return new Find(this.store);
 }
 
 $("#logout").click(function(e) {
