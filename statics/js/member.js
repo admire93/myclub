@@ -24,3 +24,16 @@ Member.prototype.createByJSON = function(json) {
   return this.create(
       json['studentNumber'], json['name'], json['phoneNumber'], json['sns']);
 };
+
+var addMemberAtTable = function(data) {
+  var tem = $('#members .template')[0].outerHTML;
+  var n = new Find(data['sns'].split('/'));
+  var url = 'http://graph.facebook.com/' + n.last() + '/picture';
+  data['pics'] = '<img src=' + url + ' />';
+  var $elem = $(tem.tmpl(data));
+  $elem.removeClass('template');
+  $elem.removeAttr('style');
+  $elem.removeAttr('role');
+
+  $('#members tbody').append($elem);
+}

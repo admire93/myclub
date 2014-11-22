@@ -38,6 +38,9 @@ var findMe = function() {
 
 
 var Find = function(r) {
+  if(r == undefined) {
+    r = [];
+  }
   this.r = r;
 }
 
@@ -179,3 +182,16 @@ $.fn.extend({
     });
   }
 });
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+function error(code) {
+  if(code == 404) {
+    location.href = './error_404.html';
+  }
+}
