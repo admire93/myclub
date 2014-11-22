@@ -1,6 +1,14 @@
 td.over { background: #abc; }
+
 #timetable { width: 1024px; border: 1px solid #abc; }
 #timetable th { text-align: center; }
 #timetable tr { border: 1px solid #abc; }
 #timetable td, th { border: 1px solid #abc; }
-#timetable td { width: 200px; height: 120px; }
+#timetable td { width: 200px; height: 120px; text-align: center;}
+
+
+#popup {
+  width: 800px; height: 500px;
+  background: #fff;
+  display: none;
+}
