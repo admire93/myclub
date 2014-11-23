@@ -32,16 +32,39 @@
       })
     .click(
       function(e) {
-        $popup.bPopup();
-        var d = $(this).attr('class').split(' ')[0];
+        var $this = $(this);
+        var d = $this.attr('class').split(' ')[0];
         $('input[type=hidden]').attr('value', d);
+        if($this.hasClass('lecture')) {
+          var condit = {
+            'lectureName': $this.data('lecture'),
+            'from': $this.data('lecture-from')
+          };
+
+          var time = timetable.and(condit).first();
+          var $deleteButton = $('<button type="button" class="btn btn-danger">삭제</button>');
+
+          for(k in time) {
+            $('input[name=' + k + ']').attr('value', time[k]);
+          }
+
+          $deleteButton.click(function(e) {
+            timetable.del(condit);
+            $popup.close();
+            location.reload();
+          });
+
+          $popup.find('div.buttons').append($deleteButton);
+        }
+
+        $popup.bPopup();
       });
 
 
   $('#add-time').restfulize(function(d) {
-    var $this = $(this);
     timetable.createByJSON(d);
     $popup.close();
+    location.reload();
   });
 
   var lectures = timetable.all();
@@ -64,13 +87,15 @@
     var end = start + parseInt(lec.time);
 
     for(var j = start; j < end; j++) {
-      console.log(className, end, lec.time, start);
       var rgb = pickColor();
       var className = day + '-' + s[j];
 
       $('td.'+className)
         .css('background-color', rgb)
-        .text(lec.lectureName);
+        .text(lec.lectureName)
+        .addClass('lecture')
+        .attr('data-lecture', '{lectureName}'.tmpl(lec))
+        .attr('data-lecture-from', '{from}'.tmpl(lec));
     }
 
   }

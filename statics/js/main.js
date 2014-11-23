@@ -1,3 +1,9 @@
+Array.prototype.remove = function(from, to) {
+  var rest = this.slice((to || from) + 1 || this.length);
+  this.length = from < 0 ? this.length + from : from;
+  return this.push.apply(this, rest);
+};
+
 var CLUB_PREFIX = 'myclubnl!';
 
 var setSession = function(k, v) {
@@ -109,6 +115,31 @@ Model.prototype.find = function(attr, v) {
     }
   }
 
+  return new Find(r);
+}
+
+Model.prototype.del = function(arg) {
+  var r = [];
+  var idxs = [];
+
+  for(i in this.store) {
+    var st = true;
+    for(j in arg) {
+      st = st && (this.store[i][j] == arg[j]);
+      if(!st) break;
+    }
+
+    if(st) {
+      idxs.push(i);
+    }
+  }
+
+  for(var i = 0; i < idxs.length; i++) {
+    r.push(this.store.remove(idxs[i]));
+  }
+
+
+  this.commit();
   return new Find(r);
 }
 
