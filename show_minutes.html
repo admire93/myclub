@@ -65,32 +65,28 @@
 
       <div class="row">
         <div id="content">
-          <h1 id="title" role="tmpl">{clubname} 의 회의록.</h1>
-
-          <a href="./add_minutes.html" class="btn btn-primary">
-            회의록 추가
+          <a href="./minutes.html" class="btn btn-primary">
+            돌아가기
           </a>
 
-          <table id="minutes">
-            <thead>
+          <table id="minutes" class="template" role="tmpl">
+            <tr>
               <th>제목</th>
+              <td>{title}</td>
+            </tr>
+
+            <tr>
               <th>내용</th>
-              <th>작성일자</th>
-            </thead>
+              <td>{content}</td>
+            </tr>
 
-            <tbody>
-              <tr class="template" style="display: none;" role="tmpl">
-
-                <td>{title}</td>
-
-                <td>{shortContent}</td>
-
-                <td><a href="./show_minutes.html?createdAt={createdAt}">보러가기</a></td>
-
-              </tr>
-            </tbody>
+            <tr>
+              <th>작성일</th>
+              <td>{createdAt}</td>
+            </tr>
 
           </table>
+
         </div>
       </div>
 
@@ -111,8 +107,12 @@
     <script type="text/javascript"
             src="./statics/js/minutes.js">
     </script>
-    <script type="text/javascript"
-            src="./statics/js/page.minutes.js">
+
+    <script type="text/javascript">
+      (function() {
+        var m = new Minutes();
+        var findMinute = m.find('createdAt', getParameterByName('createdAt'));
+      })();
     </script>
   </body>
 </html>
