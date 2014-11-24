@@ -69,23 +69,28 @@
             돌아가기
           </a>
 
-          <table id="minutes" class="template" role="tmpl">
-            <tr>
-              <th>제목</th>
-              <td>{title}</td>
-            </tr>
+          <dl id="minutes">
+            <dt>
+              제목
+            </dt>
+            <dd role="tmpl">
+              {title}
+            </dd>
 
-            <tr>
-              <th>내용</th>
-              <td>{content}</td>
-            </tr>
+            <dt>
+              내용
+            </dt>
+            <dd role="tmpl">
+              {content}
+            </dd>
 
-            <tr>
-              <th>작성일</th>
-              <td>{createdAt}</td>
-            </tr>
-
-          </table>
+            <dt>
+              작성일
+            </dt>
+            <dd role="tmpl">
+              {createdAt}
+            </dd>
+          </dl>
 
         </div>
       </div>
@@ -111,7 +116,12 @@
     <script type="text/javascript">
       (function() {
         var m = new Minutes();
-        var findMinute = m.find('createdAt', getParameterByName('createdAt'));
+        var findMinute = m.find('createdAt', getParameterByName('createdAt'))
+                          .first();
+        $('#minutes dd').each(function(i, e) {
+          findMinute['createdAt'] = new Date(findMinute['createdAt']).toUTCString();
+          $(e).tmpl(findMinute);
+        });
       })();
     </script>
   </body>

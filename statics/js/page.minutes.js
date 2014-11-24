@@ -12,7 +12,7 @@
     if(data['content'].length > 20) {
       data['shortContent'] = data['content'].slice(0, 20) + '...';
     } else {
-      data['shortContent'] = data;
+      data['shortContent'] = data['content'];
     }
 
     var $elem = $(tem.tmpl(data));
