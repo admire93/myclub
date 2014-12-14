@@ -48,6 +48,7 @@ body { background: rgb(240,240,240) }
 
 .container .card {
   border-radius: 10px;
+  width: 1024px;
   background: rgb(255, 255, 255); padding: 10px 30px; margin-top: 20px;}
 
 .pics-card {

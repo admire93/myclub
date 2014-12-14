@@ -1,7 +1,7 @@
 (function() {
   var member = new Member();
 
-  $('h1#title').tmpl({'clubname': findMe()['clubname']});
+  $('h2#title').tmpl({'clubname': findMe()['clubname']});
 
   $.fn.extend({
     'changeClass': function(target, change) {

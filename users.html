@@ -71,83 +71,86 @@
 
       <div class="row">
         <div id="content">
-          <h1 id="title" role="tmpl">
-            {clubname} 에 있는 회원들
-          </h1>
 
-          <table id="members">
-            <!-- student number, name, phone number, facebook?-->
-            <thead>
-              <tr>
-                <td colspan="5">
-                  <a href="#add-member"
-                     class="btn btn-primary"
-                     id="add-member">
-                    <span class="glyphicon glyphicon-plus">
-                    </span>
-                    회원 추가하기
-                  </a>
-                </td>
+          <div class="card">
+            <h2 id="title" role="tmpl">
+              {clubname} 에 있는 회원들
+            </h2>
+
+            <table id="members">
+              <!-- student number, name, phone number, facebook?-->
+              <thead>
+                <tr>
+                  <td colspan="5">
+                    <a href="#add-member"
+                       class="btn btn-primary"
+                       id="add-member">
+                      <span class="glyphicon glyphicon-plus">
+                      </span>
+                      회원 추가하기
+                    </a>
+                  </td>
+                </tr>
+
+                <tr class="table-heads">
+                  <th>pics</th>
+                  <th>학번</th>
+                  <th>이름</th>
+                  <th>핸드폰 번호</th>
+                  <th>SNS 주소</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr class="template" style="display: none;">
+                  <td>{pics}</td>
+
+                  <td>{studentNumber}</td>
+
+                  <td>{name}</td>
+
+                  <td>{phoneNumber}</td>
+
+                  <td>{sns}</td>
+                </tr>
+
+                <tr class="form" style="display: none;">
+                  <td>
+                    <div class="form-group">
+                      <button type="submit" name="submit" class="btn btn-parimary">
+                        <span class="glyphicon glyphicon-floppy-saved"></span>
+                      </button>
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="form-group">
+                      <input type="text" name="studentNumber" class="form-control" />
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="form-group">
+                      <input type="text" name="name" class="form-control" />
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="form-group">
+                      <input type="text" name="phoneNumber" class="form-control" />
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="form-group">
+                      <input type="text" name="sns" class="form-control" />
+                    </div>
+                  </td>
+
               </tr>
-
-              <tr class="table-heads">
-                <th>pics</th>
-                <th>학번</th>
-                <th>이름</th>
-                <th>핸드폰 번호</th>
-                <th>SNS 주소</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr class="template" style="display: none;">
-                <td>{pics}</td>
-
-                <td>{studentNumber}</td>
-
-                <td>{name}</td>
-
-                <td>{phoneNumber}</td>
-
-                <td>{sns}</td>
-              </tr>
-
-              <tr class="form" style="display: none;">
-                <td>
-                  <div class="form-group">
-                    <button type="submit" name="submit" class="btn btn-parimary">
-                      <span class="glyphicon glyphicon-floppy-saved"></span>
-                    </button>
-                  </div>
-                </td>
-
-                <td>
-                  <div class="form-group">
-                    <input type="text" name="studentNumber" class="form-control" />
-                  </div>
-                </td>
-
-                <td>
-                  <div class="form-group">
-                    <input type="text" name="name" class="form-control" />
-                  </div>
-                </td>
-
-                <td>
-                  <div class="form-group">
-                    <input type="text" name="phoneNumber" class="form-control" />
-                  </div>
-                </td>
-
-                <td>
-                  <div class="form-group">
-                    <input type="text" name="sns" class="form-control" />
-                  </div>
-                </td>
-
-            </tr>
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          </div> <!-- .card -->
 
         </div>
       </div>
