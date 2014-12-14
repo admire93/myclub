@@ -74,8 +74,14 @@ Find.prototype.last = function(i) {
   return this.r[this.r.length - 1];
 }
 
-var Model = function(name) {
+var Model = function(name, unique) {
+  if(unique) {
+    name = name + findMe()['clubname'];
+  } else {
+    unique = false;
+  }
   this.setStoreName(name);
+  this.unique = unique;
   this.load();
 }
 
@@ -93,7 +99,11 @@ Model.prototype.reset = function(e) {
 }
 
 Model.prototype.commit = function() {
-  localStorage[this.store_name] = JSON.stringify(this.store);
+  var name = this.store_name;
+  if(this.unique) {
+    name = this.store_name + findMe()['clubname'];
+  }
+  localStorage[name] = JSON.stringify(this.store);
 }
 
 
@@ -101,7 +111,11 @@ Model.prototype.load = function() {
   this.store = [];
   if(localStorage[this.store_name] != "") {
     try {
-      this.store = JSON.parse(localStorage[this.store_name]);
+      var name = this.store_name;
+      if(this.unique) {
+        name += findMe()['clubname'];
+      }
+      this.store = JSON.parse(localStorage[name]);
     } catch(except) {
     }
   }

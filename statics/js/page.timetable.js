@@ -8,12 +8,12 @@
   if(til < 0) {
     til = 0;
   }
-  while(i > til) {
+  while(i >= til) {
     var m = all_members.get(i);
     if(m !== undefined) {
       var $elem = $tmpl.clone();
       var n = new Find(m['sns'].split('/'));
-      var url = 'http://graph.facebook.com/' + n.last() + '/picture';
+      var url = 'http://graph.facebook.com/' + n.last() + '/picture?width=200&height=200';
       $elem.find('img')
            .attr('src', url);
       $elem.find('.member-name')

@@ -1,6 +1,8 @@
-var Minutes = function() {};
+var Minutes = function() {
+  this.unique = true;
+};
 
-Minutes.prototype = new Model('minutes');
+Minutes.prototype = new Model('minutes', true);
 Minutes.prototype.constructor = Minutes;
 
 Minutes.prototype.create = function(t, c, d) {
