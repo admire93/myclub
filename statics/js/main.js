@@ -181,6 +181,10 @@ Model.prototype.all = function() {
   return new Find(this.store);
 }
 
+Model.prototype.count = function() {
+  return this.store.length;
+}
+
 $("#logout").click(function(e) {
     logout();
 });

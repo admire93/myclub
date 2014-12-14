@@ -38,3 +38,32 @@ header nav ul#menu li {
   margin-top: 400px; }
 
 .alert .text { color: #a94442;}
+
+h2 {
+  border-bottom: solid 3px rgb(49, 49, 49);
+  padding-bottom: 15px;
+}
+
+body { background: rgb(240,240,240) }
+
+.container .card {
+  border-radius: 10px;
+  background: rgb(255, 255, 255); padding: 10px 30px; margin-top: 20px;}
+
+.pics-card {
+  width: 150px; height: 150px; }
+.pics-card img {
+  border-radius: 20px;
+  width: 150px; height: 150px;
+  display: block;
+}
+.pics-card p {
+  border-radius-bottom: 20px;
+  width: 150px; height: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  position: relative;
+  text-align: center;
+  top: -30px;
+  background: rgba(255, 255, 255, .5);
+}
