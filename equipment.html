@@ -65,7 +65,45 @@
 
       <div class="row">
         <div id="content">
-          <h1 id="title" role="tmpl">{clubname} 환영합니다.</h1>
+
+          <div class="card">
+
+            <h1 id="title" role="tmpl">{clubname} 의 물품.</h1>
+
+            <a href="./add_equipment.html" class="btn btn-primary">
+              물품  추가
+            </a>
+
+            <table id="equipment" class="mctable">
+              <thead>
+                <th>물품 이름</th>
+                <th>상태</th>
+                <th colspan="2">갯수</th>
+              </thead>
+
+              <tbody>
+                <tr class="template" style="display: none;" role="tmpl">
+
+                  <td>{name}</td>
+
+                  <td>{status}</td>
+
+                  <td>{num}</td>
+
+                  <td>
+                    <form method="POST" class="delete-equipment">
+                      <input type="hidden" name="createdAt" value="{createdAt}" />
+                      <input type="hidden" name="name" value="{name}" />
+                      <button class="btn btn-danger">삭제</button>
+                    </form>
+                  </td>
+
+                </tr>
+              </tbody>
+
+            </table>
+
+          </div>
 
         </div>
       </div>
@@ -85,7 +123,10 @@
             src="./statics/js/tmpl.js">
     </script>
     <script type="text/javascript"
-            src="./statics/js/page.index.js">
+            src="./statics/js/equipment.js">
+    </script>
+    <script type="text/javascript"
+            src="./statics/js/page.equipment.js">
     </script>
   </body>
 </html>

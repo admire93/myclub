@@ -1,14 +1,30 @@
-td.over { background: #abc; }
+td.over { background: rgb(200, 200, 200); }
 
-#timetable { width: 1024px; border: 1px solid #abc; }
+#timetable { width: 970px; }
 #timetable th { text-align: center; }
-#timetable tr { border: 1px solid #abc; }
-#timetable td, th { border: 1px solid #abc; }
+#timetable tr { border: 1px solid rgb(49, 49, 49); }
+#timetable td, th { border: 1px solid rgb(49, 49, 49); }
 #timetable td { width: 200px; height: 120px; text-align: center;}
 
 
 #popup {
-  width: 800px; height: 500px;
+  padding: 50px;
+  border-radius: 20px;
+  width: 800px; height: 220px;
   background: #fff;
   display: none;
 }
+
+#popup .lecture-name { width: 500px; }
+
+.color-picker .colors {
+  width: 50px; height: 50px;
+  margin-right: 20px; margin-bottom: 20px;
+  float: left;}
+
+.colors:hover {
+  border-bottom: solid 2px rgb(49, 49, 49); }
+
+.color-picker .selected { border-bottom: solid 2px rgb(20, 140, 0) }
+
+#popup .buttons { clear: left; }

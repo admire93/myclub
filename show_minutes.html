@@ -65,32 +65,23 @@
 
       <div class="row">
         <div id="content">
-          <a href="./minutes.html" class="btn btn-primary">
-            돌아가기
-          </a>
 
-          <dl id="minutes">
-            <dt>
-              제목
-            </dt>
-            <dd role="tmpl">
+          <div class="card">
+            <a href="./minutes.html" class="btn btn-primary">
+              돌아가기
+            </a>
+
+            <h2 role="tmpl">
               {title}
-            </dd>
+            </h2>
 
-            <dt>
-              내용
-            </dt>
-            <dd role="tmpl">
-              {content}
-            </dd>
-
-            <dt>
-              작성일
-            </dt>
-            <dd role="tmpl">
+            <h4 role="tmpl">
               {createdAt}
-            </dd>
-          </dl>
+            </h4>
+
+            <pre role="tmpl">{content}</pre>
+
+          </div>
 
         </div>
       </div>
@@ -118,7 +109,7 @@
         var m = new Minutes();
         var findMinute = m.find('createdAt', getParameterByName('createdAt'))
                           .first();
-        $('#minutes dd').each(function(i, e) {
+        $('[role=tmpl]').each(function(i, e) {
           findMinute['createdAt'] = new Date(findMinute['createdAt']).toUTCString();
           $(e).tmpl(findMinute);
         });

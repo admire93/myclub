@@ -13,9 +13,7 @@
     <link rel="stylesheet"
           type="text/css"
           href="./statics/css/main.css" />
-    <style type="text/css">
-      #info-list { list-style: none; font-size: 1.5em;}
-    </style>
+
   </head>
 
   <body>
@@ -70,44 +68,64 @@
         <div id="content">
 
           <div class="card">
-            <h2 role="tmpl" id="sub-title" class="info">
-              지금 myclub에선 {clubname} 의
-            </h2>
-            <ul id="info-list">
-              <li class="info" role="tmpl">
-                {studnetNumber} 명의 회원이 등록되어있고
-              </li>
-              <li class="info" role="tmpl">
-                {minutesNumber} 개의 회의록이 작성되었으며
-              </li>
-              <li class="info" role="tmpl">
-                {timetableNumber} 개의 시간표가 관리되고있고
-              </li>
-              <li class="info" role="tmpl">
-                비품이 {equipmentNumber}개를 관리하고있습니다.
-              </li>
-            </ul>
-          </div>
 
-          <div class="card" id="recent-member">
-            <h2 role="tmpl" id="sub-title" class="info">
-              최근에 등록된 회원
-            </h2>
-            <ul class="tile">
-              <li class="tmpl" style="display: none">
-                <div class="pics-card">
-                  <img src="">
-                  <p class="member-name">
-                  </p>
-                </div>
-              </li>
-            </ul>
+            <form class="form-horizontal" role="form" id="add-equipment">
 
-            <p class="end">
-            </p>
+              <div class="form-group">
+                <input type="text" name="name"
+                       placeholder="물품 이름">은
+                <select name="status">
+                  <option value="대여중">
+                    대여중
+                  </option>
 
-          </div>
+                  <option value="분실">
+                    분실
+                  </option>
 
+                  <option value="보관" selected="selected">
+                    보관
+                  </option>
+                </select>
+                인 상태이고
+                <select name="num">
+                  <option value="1">
+                    1
+                  </option>
+                  <option value="2">
+                    2
+                  </option>
+                  <option value="3">
+                    3
+                  </option>
+                  <option value="4">
+                    4
+                  </option>
+                  <option value="5">
+                    5
+                  </option>
+                  <option value="6">
+                    6
+                  </option>
+                  <option value="7">
+                    7
+                  </option>
+                  <option value="8">
+                    8
+                  </option>
+                  <option value="9">
+                    9
+                  </option>
+                </select>
+                개 있습니다.
+              </div>
+
+              <div class="form-group submit-box">
+                <button type="submit" class="btn btn-success">저장 </button>
+              </div>
+            </form>
+
+          </div><!-- endof .card -->
         </div>
       </div>
 
@@ -127,20 +145,10 @@
     </script>
 
     <script type="text/javascript"
-            src="./statics/js/member.js">
-    </script>
-    <script type="text/javascript"
-            src="./statics/js/timetable.js">
-    </script>
-    <script type="text/javascript"
-            src="./statics/js/minutes.js">
-    </script>
-    <script type="text/javascript"
             src="./statics/js/equipment.js">
     </script>
-
     <script type="text/javascript"
-            src="./statics/js/page.index.js">
+            src="./statics/js/page.add_equipment.js">
     </script>
   </body>
 </html>

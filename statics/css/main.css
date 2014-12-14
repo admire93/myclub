@@ -38,3 +38,43 @@ header nav ul#menu li {
   margin-top: 400px; }
 
 .alert .text { color: #a94442;}
+
+h2 {
+  border-bottom: solid 3px rgb(49, 49, 49);
+  padding-bottom: 15px;
+}
+
+body { background: rgb(240,240,240) }
+
+.container .card {
+  border-radius: 10px;
+  width: 1024px;
+  background: rgb(255, 255, 255); padding: 10px 30px; margin-top: 20px;}
+
+.pics-card {
+  width: 150px; height: 150px; }
+.pics-card img {
+  border-radius: 20px;
+  width: 150px; height: 150px;
+  display: block;
+}
+.pics-card p {
+  border-radius-bottom: 20px;
+  width: 150px; height: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  position: relative;
+  text-align: center;
+  top: -30px;
+  background: rgba(255, 255, 255, .5);
+}
+
+.tile { list-style: none; }
+.tile li { width: 200px; height: 200px; float: left; margin-left: 30px;}
+p.end { clear: both; }
+
+.mctable { width: 950px; margin-top: 20px;}
+.mctable thead tr { border-bottom: solid 2px rgb(49, 49, 49); }
+.mctable thead th { padding-bottom: 10px;  }
+.mctable tbody td { padding-bottom: 20px; }
+.mctable tbody tr:hover { background: rgb(240, 240, 240) }

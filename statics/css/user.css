@@ -1,2 +1,5 @@
-#members { width: 1024px; }
-#members thead tr td { width: 1024px; text-align: right; font-size: 20px;}
+#members { width: 950px; }
+#members thead tr td { width: 100%; text-align: right; font-size: 20px;}
+#members thead { border-bottom: solid 3px rgb(49, 49, 49); }
+#members thead tr.table-heads { height: 70px; }
+#members tbody tr { height: 100px; }
