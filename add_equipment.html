@@ -66,62 +66,66 @@
 
       <div class="row">
         <div id="content">
-          <form class="form-horizontal" role="form" id="add-equipment">
 
-            <div class="form-group">
-              <input type="text" class="form-control" name="name"
-                     placeholder="물품 이름">
-            </div>
+          <div class="card">
 
-            <div class="form-group">
-              <select name="status">
-                <option value="borrow">
-                  대여중
-                </option>
+            <form class="form-horizontal" role="form" id="add-equipment">
 
-                <option value="missing">
-                  분실
-                </option>
-              </select>
-            </div>
+              <div class="form-group">
+                <input type="text" name="name"
+                       placeholder="물품 이름">은
+                <select name="status">
+                  <option value="대여중">
+                    대여중
+                  </option>
 
-            <div class="form-group">
-              <select name="num">
-                <option value="1">
-                  1
-                </option>
-                <option value="2">
-                  2
-                </option>
-                <option value="3">
-                  3
-                </option>
-                <option value="4">
-                  4
-                </option>
-                <option value="5">
-                  5
-                </option>
-                <option value="6">
-                  6
-                </option>
-                <option value="7">
-                  7
-                </option>
-                <option value="8">
-                  8
-                </option>
-                <option value="9">
-                  9
-                </option>
-              </select>
-              개
-            </div>
+                  <option value="분실">
+                    분실
+                  </option>
 
-            <div class="form-group submit-box">
-              <button type="submit" class="btn">동아리 비품 저장 </button>
-            </div>
-          </form>
+                  <option value="보관" selected="selected">
+                    보관
+                  </option>
+                </select>
+                인 상태이고
+                <select name="num">
+                  <option value="1">
+                    1
+                  </option>
+                  <option value="2">
+                    2
+                  </option>
+                  <option value="3">
+                    3
+                  </option>
+                  <option value="4">
+                    4
+                  </option>
+                  <option value="5">
+                    5
+                  </option>
+                  <option value="6">
+                    6
+                  </option>
+                  <option value="7">
+                    7
+                  </option>
+                  <option value="8">
+                    8
+                  </option>
+                  <option value="9">
+                    9
+                  </option>
+                </select>
+                개 있습니다.
+              </div>
+
+              <div class="form-group submit-box">
+                <button type="submit" class="btn btn-success">저장 </button>
+              </div>
+            </form>
+
+          </div><!-- endof .card -->
         </div>
       </div>
 
