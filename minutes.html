@@ -75,7 +75,7 @@
             <thead>
               <th>제목</th>
               <th>내용</th>
-              <th>작성일자</th>
+              <th colspan="2">작성일자</th>
             </thead>
 
             <tbody>
@@ -85,7 +85,15 @@
 
                 <td>{shortContent}</td>
 
-                <td><a href="./show_minutes.html?createdAt={createdAt}">보러가기</a></td>
+                <td>
+                  {createdAt}
+                </td>
+                <td>
+                  <a href="./show_minutes.html?createdAt={createdAt}"
+                     class="btn btn-primary">
+                    <i class="glyphicon glyphicon-log-in"></i>
+                  </a>
+                </td>
 
               </tr>
             </tbody>

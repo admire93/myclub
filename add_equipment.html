@@ -13,6 +13,7 @@
     <link rel="stylesheet"
           type="text/css"
           href="./statics/css/main.css" />
+
   </head>
 
   <body>
@@ -65,40 +66,62 @@
 
       <div class="row">
         <div id="content">
-          <h1 id="title" role="tmpl">{clubname} 의 물품.</h1>
+          <form class="form-horizontal" role="form" id="add-equipment">
 
-          <a href="./add_equipment.html" class="btn btn-primary">
-            물품  추가
-          </a>
+            <div class="form-group">
+              <input type="text" class="form-control" name="name"
+                     placeholder="물품 이름">
+            </div>
 
-          <table id="equipment">
-            <thead>
-              <th>물품 이름</th>
-              <th>상태</th>
-              <th colspan="2">갯수</th>
-            </thead>
+            <div class="form-group">
+              <select name="status">
+                <option value="borrow">
+                  대여중
+                </option>
 
-            <tbody>
-              <tr class="template" style="display: none;" role="tmpl">
+                <option value="missing">
+                  분실
+                </option>
+              </select>
+            </div>
 
-                <td>{name}</td>
+            <div class="form-group">
+              <select name="num">
+                <option value="1">
+                  1
+                </option>
+                <option value="2">
+                  2
+                </option>
+                <option value="3">
+                  3
+                </option>
+                <option value="4">
+                  4
+                </option>
+                <option value="5">
+                  5
+                </option>
+                <option value="6">
+                  6
+                </option>
+                <option value="7">
+                  7
+                </option>
+                <option value="8">
+                  8
+                </option>
+                <option value="9">
+                  9
+                </option>
+              </select>
+              개
+            </div>
 
-                <td>{status}</td>
-
-                <td>{num}</td>
-
-                <td>
-                  <form method="POST" class="delete-equipment">
-                    <input type="hidden" name="createdAt" value="{createdAt}" />
-                    <input type="hidden" name="name" value="{name}" />
-                    <button class="btn btn-danger">삭제</button>
-                  </form>
-                </td>
-
-              </tr>
-            </tbody>
-
-          </table>
+            <div class="form-group submit-box">
+              <button type="submit" class="btn">동아리 비품 저장 </button>
+            </div>
+          </form>
         </div>
       </div>
 
@@ -116,11 +139,12 @@
     <script type="text/javascript"
             src="./statics/js/tmpl.js">
     </script>
+
     <script type="text/javascript"
             src="./statics/js/equipment.js">
     </script>
     <script type="text/javascript"
-            src="./statics/js/page.equipment.js">
+            src="./statics/js/page.add_equipment.js">
     </script>
   </body>
 </html>

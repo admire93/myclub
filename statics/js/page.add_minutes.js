@@ -8,4 +8,3 @@
     location.href = "./minutes.html";
   });
 })();
-
