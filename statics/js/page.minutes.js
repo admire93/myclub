@@ -1,5 +1,5 @@
 (function() {
-  $('h1#title').tmpl({'clubname': findMe()['clubname']});
+  $('h2#title').tmpl({'clubname': findMe()['clubname']});
 
 
   var minutes = new Minutes();
@@ -7,7 +7,6 @@
 
   var addMinutesAtTable = function(data) {
     var tem = $('#minutes .template')[0].outerHTML;
-    console.log(data);
     data['shortContent'] = '';
     if(data['content'].length > 20) {
       data['shortContent'] = data['content'].slice(0, 20) + '...';
@@ -15,10 +14,17 @@
       data['shortContent'] = data['content'];
     }
 
+
+    data['rowCreatedAt'] = data['createdAt'];
+    data['createdAt'] = new Date(data['createdAt']).toUTCString();
+
     var $elem = $(tem.tmpl(data));
     $elem.removeClass('template');
     $elem.removeAttr('style');
     $elem.removeAttr('role');
+    $elem.click(function() {
+      location.href = $elem.find('a').attr('href');
+    })
 
     $('#minutes tbody').append($elem);
   }

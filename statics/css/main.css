@@ -72,3 +72,9 @@ body { background: rgb(240,240,240) }
 .tile { list-style: none; }
 .tile li { width: 200px; height: 200px; float: left; margin-left: 30px;}
 p.end { clear: both; }
+
+.mctable { width: 950px; margin-top: 20px;}
+.mctable thead tr { border-bottom: solid 2px rgb(49, 49, 49); }
+.mctable thead th { padding-bottom: 10px;  }
+.mctable tbody td { padding-bottom: 20px; }
+.mctable tbody tr:hover { background: rgb(240, 240, 240) }

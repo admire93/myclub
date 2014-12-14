@@ -65,40 +65,46 @@
 
       <div class="row">
         <div id="content">
-          <h1 id="title" role="tmpl">{clubname} 의 물품.</h1>
 
-          <a href="./add_equipment.html" class="btn btn-primary">
-            물품  추가
-          </a>
+          <div class="card">
 
-          <table id="equipment">
-            <thead>
-              <th>물품 이름</th>
-              <th>상태</th>
-              <th colspan="2">갯수</th>
-            </thead>
+            <h1 id="title" role="tmpl">{clubname} 의 물품.</h1>
 
-            <tbody>
-              <tr class="template" style="display: none;" role="tmpl">
+            <a href="./add_equipment.html" class="btn btn-primary">
+              물품  추가
+            </a>
 
-                <td>{name}</td>
+            <table id="equipment">
+              <thead>
+                <th>물품 이름</th>
+                <th>상태</th>
+                <th colspan="2">갯수</th>
+              </thead>
 
-                <td>{status}</td>
+              <tbody>
+                <tr class="template" style="display: none;" role="tmpl">
 
-                <td>{num}</td>
+                  <td>{name}</td>
 
-                <td>
-                  <form method="POST" class="delete-equipment">
-                    <input type="hidden" name="createdAt" value="{createdAt}" />
-                    <input type="hidden" name="name" value="{name}" />
-                    <button class="btn btn-danger">삭제</button>
-                  </form>
-                </td>
+                  <td>{status}</td>
 
-              </tr>
-            </tbody>
+                  <td>{num}</td>
 
-          </table>
+                  <td>
+                    <form method="POST" class="delete-equipment">
+                      <input type="hidden" name="createdAt" value="{createdAt}" />
+                      <input type="hidden" name="name" value="{name}" />
+                      <button class="btn btn-danger">삭제</button>
+                    </form>
+                  </td>
+
+                </tr>
+              </tbody>
+
+            </table>
+
+          </div>
+
         </div>
       </div>
 
