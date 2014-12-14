@@ -13,6 +13,9 @@
     <link rel="stylesheet"
           type="text/css"
           href="./statics/css/main.css" />
+    <style type="text/css">
+      #member-list .pics-card { cursor: pointer; }
+    </style>
   </head>
 
   <body>
@@ -65,24 +68,26 @@
 
       <div class="row">
         <div id="content">
-          <h1 id="title" role="tmpl">{clubname} 의 회원들의 시간표 보기</h1>
 
-          <table id="members">
+          <div class="card">
 
+            <h2 id="title" role="tmpl">{clubname} 의 회원들의 시간표 보기</h1>
+            <p class="note">
+              시간표를 보기위해서 동아리 회원의 사진을 클릭해보세요!
+            </p>
 
-            <tbody>
-              <tr class="template" style="display: none;" role="tmpl">
+            <ul id="member-list" class="tile">
+              <li class="tmpl" style="display: none">
+                <div class="pics-card" data-sn="">
+                  <img src="">
+                  <p class="member-name">
+                  </p>
+                </div>
+              </li>
+            </ul>
 
-                <td>{studentNumber}</td>
-
-                <td>{name}의 시간표</td>
-
-                <td><a href="./member_timetable.html?sn={studentNumber}">보러가기</a></td>
-
-              </tr>
-
-            </tbody>
-          </table>
+            <p class="end"></p>
+          </div>
 
         </div>
       </div>

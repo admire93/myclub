@@ -11,7 +11,7 @@
 
   var currentMember = findMember.first();
 
-  $('h1#title').tmpl({'memberName': currentMember.name});
+  $('h2#title').tmpl({'memberName': currentMember.name});
 
   $('#timetable tbody tr').each(function(i, e) {
     var ord = ['mon', 'tue', 'wed', 'thu', 'fri'];

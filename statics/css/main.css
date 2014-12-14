@@ -68,3 +68,7 @@ body { background: rgb(240,240,240) }
   top: -30px;
   background: rgba(255, 255, 255, .5);
 }
+
+.tile { list-style: none; }
+.tile li { width: 200px; height: 200px; float: left; margin-left: 30px;}
+p.end { clear: both; }
