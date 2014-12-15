@@ -1,6 +1,8 @@
-var TimeTable = function() {};
+var TimeTable = function() {
+  this.unique = true;
+};
 
-TimeTable.prototype = new Model('timetable');
+TimeTable.prototype = new Model('timetable', true);
 TimeTable.prototype.constructor = TimeTable;
 
 TimeTable.prototype.create = function(lectureName, from, time, color) {

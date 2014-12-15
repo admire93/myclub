@@ -1,6 +1,8 @@
-var Equipment = function() {};
+var Equipment = function() {
+  this.unique = true;
+};
 
-Equipment.prototype = new Model('equipment');
+Equipment.prototype = new Model('equipment', true);
 Equipment.prototype.constructor = Equipment;
 
 Equipment.prototype.create = function(name, _status, num) {

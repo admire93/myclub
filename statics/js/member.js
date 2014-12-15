@@ -1,6 +1,8 @@
-var Member = function() {};
+var Member = function() {
+  this.unique = true;
+};
 
-Member.prototype = new Model('member');
+Member.prototype = new Model('member', true);
 Member.prototype.constructor = Member;
 
 Member.prototype.create = function(studentNumber, name, phoneNumber, sns) {
@@ -28,8 +30,8 @@ Member.prototype.createByJSON = function(json) {
 var addMemberAtTable = function(data) {
   var tem = $('#members .template')[0].outerHTML;
   var n = new Find(data['sns'].split('/'));
-  var url = 'http://graph.facebook.com/' + n.last() + '/picture';
-  data['pics'] = '<img src=' + url + ' />';
+  var url = 'http://graph.facebook.com/' + n.last() + '/picture?width=50&height=50';
+  data['pics'] = '<img src=' + url + ' width="50" height="50" />';
   var $elem = $(tem.tmpl(data));
   $elem.removeClass('template');
   $elem.removeAttr('style');
