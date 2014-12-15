@@ -20,7 +20,7 @@
   var all_members = member.all();
   var i = member.count();
   var $tmpl = $('#recent-member ul li.tmpl').clone();
-  var til = member.count() - 12;
+  var til = member.count() - 5;
   if(til < 0) {
     til = 0;
   }
